@@ -19,16 +19,17 @@ const Navbar = () => {
         }
       );
       toast.success(response.data.message);
-      // setIsAuthorized(false);
+      setIsAuthorized(false);
       navigateTo("/login");
     } catch (error) 
     {
       toast.error(error.response.data.message)
+      setIsAuthorized(true);
     }
   };
 
   return (
-    <nav >
+    <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
       <div className="container">
         <div className="logo">
           <img src="/jobb.png" alt="logo" />
