@@ -28,9 +28,9 @@ const MyJobs = () => {
     };
     fetchJobs();
   }, []);
-  // if (!isAuthorized || (user && user.role !== "Employer")) {
-  //   navigateTo("/");
-  // }
+  if (!isAuthorized || (user && user.role !== "Employer")) {
+    navigateTo("/");
+  }
 
   //Function For Enabling Editing Mode
   const handleEnableEdit = (jobId) => {

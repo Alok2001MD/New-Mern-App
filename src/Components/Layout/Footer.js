@@ -7,7 +7,7 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => {
   const { isAuthorized } = useContext(Context);
   return (
-    <footer >
+    <footer className={isAuthorized ? "footerShow" : "footerHide"}>
       <div>&copy; All Rights Reserved By Alok Mattihalli.</div>
       <div>
         <Link to={"https://www.facebook.com/profile.php?id=100030535123397"} target="_blank">

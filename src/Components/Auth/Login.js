@@ -31,21 +31,22 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setRole("");
-      // setIsAuthorized(true);
+      setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
-  // if(isAuthorized){
-  //   return <Navigate to={'/'}/>
-  // }
+  if(isAuthorized){
+    return <Navigate to={'/'}/>
+  }
 
   return (
     <>
       <section className="authPage">
         <div className="container">
           <div className="header">
+
             <h3>Login to your account</h3>
           </div>
           <form>

@@ -29,12 +29,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
       <div className="container">
         <div className="logo">
           <img src="/jobb.png" alt="logo" />
         </div>
-        <ul >
+        <ul className={!show ? "menu" : "show-menu menu"}>
           <li>
             <Link to={"/"} onClick={() => setShow(false)}>
               HOME
