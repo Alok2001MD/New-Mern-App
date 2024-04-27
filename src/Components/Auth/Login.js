@@ -37,7 +37,8 @@ const Login = () => {
       toast.error(error.response.data.message);
     }
   };
-
+     const hello=isAuthorized;
+     console.log(hello);
   if(isAuthorized){
     return <Navigate to={'/'}/>
   }
