@@ -19,7 +19,7 @@ import MyJobs from "./Components/Job/MyJobs";
 import './App.css';
 
 function App() {
-  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
+  const {  setUser } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -30,14 +30,15 @@ function App() {
           }
         );
         setUser(response.data.user);
-        setIsAuthorized(true);
+        // setIsAuthorized(true);
         console.log(response.data.user)
       } catch (error) {
-        setIsAuthorized(false);
+        // setIsAuthorized(false);
+
       }
     };
     fetchUser();
-  }, [isAuthorized]);
+  });
   return (
 <>
       <BrowserRouter>
