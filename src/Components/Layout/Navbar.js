@@ -7,7 +7,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
+  // const { isAuthorized, setIsAuthorized, user } = useContext(Context);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const navigateTo = useNavigate();
 
   const handleLogout = async () => {
