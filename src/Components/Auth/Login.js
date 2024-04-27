@@ -46,7 +46,6 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/job.png" alt="logo" />
             <h3>Login to your account</h3>
           </div>
           <form>
