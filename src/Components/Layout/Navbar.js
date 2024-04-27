@@ -24,7 +24,7 @@ const Navbar = () => {
     }
      catch (error) 
     {
-      setIsAuthorized(true);
+      // setIsAuthorized(true);
       toast.error(error.response.data.message)
     }
   };

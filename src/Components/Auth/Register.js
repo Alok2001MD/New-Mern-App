@@ -40,7 +40,6 @@ const Register = () => {
       setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
-      setIsAuthorized(true);
     }
   };
 
