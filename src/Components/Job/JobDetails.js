@@ -23,9 +23,9 @@ const JobDetails = () => {
       });
   }, []);
 
-  if (!isAuthorized) {
-    navigateTo("/login");
-  }
+  // if (!isAuthorized) {
+  //   navigateTo("/login");
+  // }
 
   return (
     <section className="jobDetail page">

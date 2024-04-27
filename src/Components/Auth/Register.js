@@ -37,15 +37,15 @@ const Register = () => {
       setPassword("");
       setPhone("");
       setRole("");
-      setIsAuthorized(true);
+      // setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
-  }
+  // if(isAuthorized){
+  //   return <Navigate to={'/'}/>
+  // }
 
 
   return (

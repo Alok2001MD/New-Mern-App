@@ -20,9 +20,9 @@ const Jobs = () => {
       console.log(error);
     }
   }, []);
-  if (!isAuthorized) {
-    navigateTo("/");
-  }
+  // if (!isAuthorized) {
+  //   navigateTo("/");
+  // }
 
   return (
     <section className="jobs page">
