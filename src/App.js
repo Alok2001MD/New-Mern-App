@@ -33,6 +33,7 @@ function App() {
         setIsAuthorized(true);
       } catch (error) {
         setIsAuthorized(false);
+        console.log(error);
       }
     };
     fetchUser();
