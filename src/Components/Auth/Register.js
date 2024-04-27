@@ -16,7 +16,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const { usrer,setUser } = useContext(Context);
+  const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -37,15 +37,15 @@ const Register = () => {
       setPassword("");
       setPhone("");
       setRole("");
-      // setIsAuthorized(true);
+      setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
-  // if(isAuthorized){
-  //   return <Navigate to={'/'}/>
-  // }
+  if(isAuthorized){
+    return <Navigate to={'/'}/>
+  }
 
 
   return (
