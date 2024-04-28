@@ -32,7 +32,6 @@ const Login = () => {
       setPassword("");
       setRole("");
       setIsAuthorized(true);
-      console.log(data)
     } 
     catch (error) 
     {
