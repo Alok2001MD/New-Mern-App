@@ -13,6 +13,8 @@ import MyApplications from "./Components/Application/MyApplications";
 import PostJob from "./Components/Job/PostJob";
 import NotFound from "./Components/Notfound/NotFound";
 import MyJobs from "./Components/Job/MyJobs";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
 import './App.css';
 
 function App() {
