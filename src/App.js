@@ -35,6 +35,7 @@ function App() {
         console.log("user"+user)
       } catch (error) {
         console.log("failed bro")
+        console.log(error);
         setIsAuthorized(false);
       }
     };
