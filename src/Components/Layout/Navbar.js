@@ -18,11 +18,14 @@ const Navbar = () => {
           withCredentials: true,
         }
       );
-      toast.success(response.data.message || "Logout successful");
-      setIsAuthorized(false); // Update isAuthorized to false upon successful logout
-      navigateTo("/login"); // Redirect to login page after logout
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Logout failed");
+      toast.success(response.data.message);
+      setIsAuthorized(true);
+      navigateTo("/login");
+    }
+     catch (error) 
+    {
+      // setIsAuthorized(true);
+      toast.error(error.response.data.message)
     }
   };
 
