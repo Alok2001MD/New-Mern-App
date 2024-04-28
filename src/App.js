@@ -34,8 +34,7 @@ function App() {
         setIsAuthorized(true);
         console.log("user"+user)
       } catch (error) {
-        console.log("failed bro")
-        console.log(error);
+        console.log("failed bro",error)
         setIsAuthorized(false);
       }
     };
