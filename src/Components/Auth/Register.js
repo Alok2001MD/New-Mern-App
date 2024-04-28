@@ -16,7 +16,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const { isAuthorized, setIsAuthorized } = useContext(Context);
+  const { setIsAuthorized ,isAuthorized} = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -39,21 +39,19 @@ const Register = () => {
       setRole("");
       setIsAuthorized(true);
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message || "Registration failed");
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
+  if (isAuthorized) {
+    return <Navigate to={'/'} />;
   }
-
 
   return (
     <>
       <section className="authPage">
         <div className="container">
           <div className="header">
-
             <h3>Create a new account</h3>
           </div>
           <form>
@@ -96,12 +94,11 @@ const Register = () => {
               <label>Phone Number</label>
               <div>
                 <input
-                  type="number"
+                  type="tel"
                   placeholder="Your Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
-
                 <FaPhoneFlip />
               </div>
             </div>
