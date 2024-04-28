@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(
+        const response = await fetch.get(
           "https://backends-3.onrender.com/api/v1/user/getuser",
           {
             withCredentials: true,
