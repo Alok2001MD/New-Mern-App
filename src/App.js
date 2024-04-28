@@ -34,6 +34,7 @@ function App() {
         console.log("data of user is"+response.data.user)
         console.log("user"+user)
       } catch (error) {
+        console.log("failed bro")
         setIsAuthorized(false);
       }
     };
