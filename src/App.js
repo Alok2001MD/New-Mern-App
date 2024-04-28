@@ -1,11 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import "./App.css";
-import { Context } from "./index";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./Components/Auth/Login";
-import Register from "./Components/Auth/Register";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { Context } from "./index";
 import Navbar from "./Components/Layout/Navbar";
 import Footer from "./Components/Layout/Footer";
 import Home from "./Components/Home/Home";
@@ -19,9 +16,10 @@ import MyJobs from "./Components/Job/MyJobs";
 import './App.css';
 
 function App() {
-  const { isAuthorized, setIsAuthorized, setUser,user } = useContext(Context);
+  const { setIsAuthorized } = useContext(Context);
+
   useEffect(() => {
-    const fetchUser = async () => {
+    const checkAuthorization = async () => {
       try {
         const response = await axios.get(
           "https://backends-3.onrender.com/api/v1/user/getuser",
@@ -29,19 +27,18 @@ function App() {
             withCredentials: true,
           }
         );
-        setUser(response.data.user);
-        console.log("data of user is"+response.data.user)
         setIsAuthorized(true);
-        console.log("user"+user)
       } catch (error) {
-        console.log("failed bro",error)
         setIsAuthorized(false);
+        console.log("Authorization check failed:", error);
       }
     };
-    fetchUser();
-  }, [isAuthorized,setIsAuthorized,user,setUser]);
+
+    checkAuthorization();
+  }, [setIsAuthorized]);
+
   return (
-<>
+    <>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -60,7 +57,7 @@ function App() {
         <Toaster />
       </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App;
