@@ -31,7 +31,7 @@ function App() {
         );
         setUser(response.data.user);
         setIsAuthorized(true);
-        console.log(response.data.user)
+        console.log("data of user is"+response.data.user)
       } catch (error) {
         setIsAuthorized(false);
       }
