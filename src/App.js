@@ -39,7 +39,7 @@ function App() {
       }
     };
     fetchUser();
-  }, [isAuthorized]);
+  }, [isAuthorized,setIsAuthorized,user,setUser]);
   return (
 <>
       <BrowserRouter>
